@@ -11,7 +11,7 @@ export default function Hero() {
   const parallaxY = useTransform(scrollY, [0, 500], ['0%', '12%'])
 
   return (
-    <section className="relative z-0 flex min-h-screen max-w-4xl flex-col justify-center px-6 pt-20 mx-auto">
+    <section className="relative z-0 flex min-h-screen max-w-4xl flex-col justify-center px-6 pt-24 mx-auto md:pt-20">
       {!reduceMotion ? (
         <motion.div
           aria-hidden

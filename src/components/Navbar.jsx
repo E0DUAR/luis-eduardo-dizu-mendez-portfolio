@@ -15,10 +15,10 @@ export default function Navbar() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: duration.nav }}
-      className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 border-b border-border-subtle bg-canvas/80 backdrop-blur-sm"
+      className="fixed top-0 left-0 right-0 z-50 flex flex-col items-center gap-3 py-4 px-6 border-b border-border-subtle bg-canvas/80 backdrop-blur-sm md:flex-row md:items-center md:justify-between md:gap-0"
     >
-      <span className="text-accent font-semibold tracking-tight">eduardo.dev</span>
-      <ul className="flex gap-6">
+      <span className="text-accent font-semibold tracking-tight shrink-0 text-center">eduardo.dev</span>
+      <ul className="flex flex-wrap justify-center gap-x-4 gap-y-1 md:justify-end md:gap-6 md:flex-nowrap">
         {links.map((link) => (
           <li key={link.href}>
             <AnimatedNavLink href={link.href}>{link.label}</AnimatedNavLink>
