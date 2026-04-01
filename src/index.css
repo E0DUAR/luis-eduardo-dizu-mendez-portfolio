@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+ * Shell del documento: variables `--color-*` las asigna `ThemeProvider` desde `tokens.js`.
+ * Los segundos argumentos de `var()` son fallback (primer paint / sin JS); deben coincidir con tokens.
+ */
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+
+  * {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-canvas, #0a0a0a);
+    color: var(--color-fg-body, #f5f5f5);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: var(--color-canvas, #0a0a0a);
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 0.125rem;
+    background-color: var(--color-accent, #f59e0b);
+  }
+}

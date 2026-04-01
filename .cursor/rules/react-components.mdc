@@ -1,0 +1,15 @@
+---
+description: Componentes React del portfolio — tokens Tailwind, motion, iconos, enlaces.
+globs:
+  - src/components/**/*.jsx
+alwaysApply: false
+---
+
+# Componentes (`src/components`)
+
+- Estilos con **clases semánticas** del theme (`text-fg`, `text-accent`, `border-border-muted`, …), no `text-white/50` suelto salvo migración explícita.
+- **Layout de sección:** `theme.layout.section` desde `src/theme/tokens.js` donde corresponda (Hero puede mantener variante propia).
+- **Animación:** `framer-motion` (`motion.*`); imports coherentes con el resto del archivo.
+- **Iconos:** `lucide-react` — comprobar export disponible en la versión fijada del `package.json`.
+- **Enlaces:** externos con `target="_blank"` y `rel="noreferrer"`; anclas internas `#id` cuando aplique.
+- No añadir rutas o mockups de preview en Navbar salvo petición explícita del usuario.

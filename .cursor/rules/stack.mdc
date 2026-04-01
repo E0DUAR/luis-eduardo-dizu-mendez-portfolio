@@ -1,0 +1,13 @@
+---
+description: Portfolio Vite + React + Tailwind; design tokens y convenciones de datos.
+alwaysApply: true
+---
+
+# Stack y convenciones globales
+
+- **Build:** Vite, React (JSX), Tailwind CSS, ESLint del repo.
+- **Diseño:** `src/theme/tokens.js` + `tailwindThemeExtend` — colores y layout semánticos (`text-fg-muted`, `bg-canvas`, `border-border-subtle`, etc.). No introducir hex arbitrarios en componentes; el shell global usa variables en `index.css` con fallbacks alineados a tokens.
+- **ThemeProvider** aplica `--color-*` al documento; utilidades Tailwind siguen saliendo del mismo `theme`.
+- **Datos:** `src/data/*.js`; proyectos deben pasar por `normalizePortfolioProject` (soporta `highlight` y alias `featured` para CMS).
+- **Docs de UI:** `docs/design-system.md` como referencia; no duplicar manuales largos en reglas.
+- **Mockups / pruebas aisladas:** solo bajo `src/mokups/` (excepción al flujo de tokens hasta integrarse en `src/components/`).

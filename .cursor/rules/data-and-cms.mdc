@@ -1,0 +1,13 @@
+---
+description: Datos en src/data — shape de proyectos, normalización CMS/Sanity vía normalizePortfolioProject.
+globs:
+  - src/data/**/*.js
+alwaysApply: false
+---
+
+# Datos (`src/data`)
+
+- Objetos de proyecto: `id`, `title`, `description`, `stack` (array), `url`, `repo` (`null` si no hay), y **`highlight`** booleano para variante de tarjeta (acento vs neutra).
+- **CMS / Sanity:** mapear campo editorial tipo `featured` usando `normalizePortfolioProject` en `normalizePortfolioProject.js` (comentario en ese file indica el contrato). Ajustar ahí el alias si el schema usa otro nombre.
+- Lista exportada: usar `.map(normalizePortfolioProject)` cuando la fuente sea arreglo crudo (estático o respuesta API).
+- No incrustar clases Tailwind en datos; solo texto, URLs y flags.
