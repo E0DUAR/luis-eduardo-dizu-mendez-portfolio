@@ -27,8 +27,8 @@ La carpeta **`src/mokups/`** está reservada para **mockups y experimentos**. Ah
 | `text-fg-faint` | Metadatos, iconos sociales en reposo (≈ 30%) |
 | `text-fg-ghost` | Muy suave (≈ 20%) |
 | `text-fg-hint` | Indicadores muy tenues (flecha scroll), footer legal (≈ 10%) |
-| `bg-accent` / `text-accent` | Marca / CTAs |
-| `hover:bg-accent-hover` | Hover de botones primarios |
+| `bg-accent` / `text-accent` | Marca / CTAs (`#ea580b`, ~orange-600; ver `tokens.js`) |
+| `hover:bg-accent-hover` | Hover de botones primarios (`orange-500`) |
 | `border-border-subtle` | Bordes de tarjetas |
 | `border-border-muted` | Línea de timeline, bordes de botón secundario |
 | `border-border-strong` | Hover de bordes |
@@ -52,7 +52,7 @@ Los valores exactos están en `src/theme/tokens.js`.
 | `accent.hover` | `--color-accent-hover` |
 | `border.subtle` | `--color-border-subtle` |
 
-El `body` y la scrollbar en `index.css` usan al menos `--color-canvas`, `--color-fg-body` y `--color-accent` (con fallbacks documentados en el propio CSS).
+El `body`, la scrollbar (WebKit + `scrollbar-color` en Firefox) y los anillos `:focus-visible` en `index.css` usan al menos `--color-canvas`, `--color-fg-body` y `--color-accent` (con fallbacks alineados a `tokens.js`, p. ej. acento `#ea580b`).
 
 ### Jerarquía visual (referencia mockup Hero)
 
@@ -64,6 +64,12 @@ El `body` y la scrollbar en `index.css` usan al menos `--color-canvas`, `--color
 - **Bordes en general:** tarjetas `border-border-subtle`; bordes “visibles” en controles `border-border-muted` / `strong` en hover.
 
 Este mismo mapa aplica al resto de secciones: mismos tokens, distinto layout.
+
+## Motion (Framer Motion)
+
+- **Presets compartidos:** [`src/theme/motion.js`](../src/theme/motion.js) — `duration`, `stagger`, `spring`, `viewportOnce`, variantes `staggerContainer` / `staggerItemY` / `staggerItemX`, y escala `ctaHover` / `ctaTap` para CTAs.
+- **Componentes UI:** [`src/components/ui/`](../src/components/ui/) — `AnimatedNavLink` (subrayado en hover), `MagneticAnchor` (imán suave en desktop), `CtaLink` (hover/tap en botones-enlace), `TapIconLink` (feedback tap en iconos).
+- **`prefers-reduced-motion`:** `MagneticAnchor` y el parallax del Hero se desactivan vía `useReducedMotion()`; en `index.css`, `scroll-behavior: auto` bajo `prefers-reduced-motion: reduce`.
 
 ## Tipografía
 
@@ -105,6 +111,7 @@ function Ejemplo() {
 | `src/theme/ThemeProvider.jsx` | Provider + efecto que aplica `--color-*` al documento |
 | `src/theme/apply-document-css-vars.js` | `getCssVarEntries` / `applyDocumentCssVars` |
 | `src/theme/useTheme.js` | Hook |
+| `src/theme/motion.js` | Duraciones, stagger y variantes Motion |
 | `tailwind.config.js` | `extend` desde tokens |
 | `src/index.css` | Base `body` + scrollbar vía `var(--color-*, fallback)` |
 | `src/main.jsx` | `<ThemeProvider>` envuelve `<App />` |

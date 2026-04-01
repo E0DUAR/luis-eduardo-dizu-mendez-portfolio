@@ -26,10 +26,10 @@ export const theme = {
       hint: 'rgba(255, 255, 255, 0.1)',
     },
     accent: {
-      /** Ámbar (Tailwind amber-500): más amarillo / menos rojizo que orange-500 en fondo oscuro. */
-      DEFAULT: '#f59e0b',
-      /** amber-400 — hover más claro que DEFAULT. */
-      hover: '#fbbf24',
+      /** Alineado a muestra real de scrollbar (~orange-600, #ea580b). */
+      DEFAULT: '#ea580b',
+      /** Tailwind orange-500 — hover más claro que DEFAULT, sin saltar a orange-400 (más amarillento). */
+      hover: '#f97316',
     },
     border: {
       /** Tarjetas, divisores suaves */
@@ -42,6 +42,19 @@ export const theme = {
     surface: {
       subtle: 'rgba(255, 255, 255, 0.02)',
       tag: 'rgba(255, 255, 255, 0.05)',
+    },
+    /** Badges de estado en tarjetas de proyecto (Projects.jsx) */
+    projectStatus: {
+      online: {
+        text: '#34d399',
+        surface: 'rgba(16, 185, 129, 0.12)',
+        border: 'rgba(52, 211, 153, 0.35)',
+      },
+      building: {
+        text: '#fbbf24',
+        surface: 'rgba(251, 191, 36, 0.12)',
+        border: 'rgba(251, 191, 36, 0.4)',
+      },
     },
   },
   fontFamily: {

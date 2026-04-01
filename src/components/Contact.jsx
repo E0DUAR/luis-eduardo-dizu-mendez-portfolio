@@ -1,6 +1,10 @@
 import { motion } from 'framer-motion'
-import { Mail, Linkedin, Github, ExternalLink } from 'lucide-react'
+import { Mail, Linkedin, Github, MessageCircle } from 'lucide-react'
 import { theme } from '../theme/tokens'
+import { duration, viewportOnce } from '../theme/motion'
+import MagneticAnchor from './ui/MagneticAnchor'
+import CtaLink from './ui/CtaLink'
+import TapIconLink from './ui/TapIconLink'
 
 export default function Contact() {
   return (
@@ -8,8 +12,8 @@ export default function Contact() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        viewport={viewportOnce}
+        transition={{ duration: duration.section }}
         className="text-center"
       >
         <p className="text-accent text-sm font-medium tracking-widest uppercase mb-4">Contact</p>
@@ -18,31 +22,51 @@ export default function Contact() {
           I'm currently looking for a remote frontend developer role.
           If you have something in mind, let's talk.
         </p>
-        <a
-          href="mailto:dizu.eduardo@gmail.com"
-          className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-fg font-medium rounded-xl hover:bg-accent-hover transition-colors mb-16 text-lg"
-        >
-          <Mail size={20} />
-          dizu.eduardo@gmail.com
-        </a>
+        <div className="mb-16 flex flex-wrap justify-center items-center gap-4">
+          <MagneticAnchor className="inline-block">
+            <CtaLink
+              href="mailto:dizu.eduardo@gmail.com"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-fg font-medium rounded-xl hover:bg-accent-hover transition-colors text-lg"
+            >
+              <Mail size={20} />
+              dizu.eduardo@gmail.com
+            </CtaLink>
+          </MagneticAnchor>
+          <MagneticAnchor className="inline-block">
+            <CtaLink
+              href="https://wa.me/573005904287"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-canvas border border-border-muted text-fg-secondary font-medium rounded-xl hover:border-border-strong hover:text-fg transition-colors text-lg"
+              aria-label="WhatsApp"
+            >
+              <MessageCircle size={20} aria-hidden />
+              WhatsApp
+            </CtaLink>
+          </MagneticAnchor>
+        </div>
 
         <div className="flex justify-center gap-8 text-fg-faint">
-          <a href="https://github.com/E0DUAR" target="_blank" rel="noreferrer"
-            className="flex items-center gap-2 hover:text-fg transition-colors text-sm">
+          <TapIconLink
+            href="https://github.com/E0DUAR"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-2 hover:text-fg transition-colors text-sm"
+          >
             <Github size={16} /> GitHub
-          </a>
-          <a href="https://www.linkedin.com/in/eduardo-dizu-mendez/" target="_blank" rel="noreferrer"
-            className="flex items-center gap-2 hover:text-fg transition-colors text-sm">
+          </TapIconLink>
+          <TapIconLink
+            href="https://www.linkedin.com/in/eduardo-dizu-mendez/"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-2 hover:text-fg transition-colors text-sm"
+          >
             <Linkedin size={16} /> LinkedIn
-          </a>
-          <a href="https://e0duar.github.io/Portfolio/" target="_blank" rel="noreferrer"
-            className="flex items-center gap-2 hover:text-fg transition-colors text-sm">
-            <ExternalLink size={16} /> Old portfolio
-          </a>
+          </TapIconLink>
         </div>
 
         <p className="text-fg-hint text-sm mt-20">
-          Built with React + Tailwind + Framer Motion · {new Date().getFullYear()}
+          Eduardo&apos;s Portfolio · {new Date().getFullYear()}
         </p>
       </motion.div>
     </section>

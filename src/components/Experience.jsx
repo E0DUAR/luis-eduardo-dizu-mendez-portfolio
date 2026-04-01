@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { experiences } from '../data/experience'
 import { theme } from '../theme/tokens'
+import { duration, staggerContainer, staggerItemX, viewportOnce } from '../theme/motion'
 
 export default function Experience() {
   return (
@@ -8,26 +9,27 @@ export default function Experience() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        viewport={viewportOnce}
+        transition={{ duration: duration.section }}
       >
         <p className="text-accent text-sm font-medium tracking-widest uppercase mb-2">Background</p>
         <h2 className="text-3xl font-bold mb-16">Experience</h2>
       </motion.div>
 
-      <div className="relative border-l border-border-muted pl-8 space-y-12">
-        {experiences.map((exp, i) => (
-          <motion.div
-            key={exp.id}
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="relative"
-          >
-            <div className={`absolute -left-[37px] w-3 h-3 rounded-full border-2 ${
-              exp.accent ? 'bg-accent border-accent' : 'bg-canvas border-border-dim'
-            }`} />
+      <motion.div
+        className="relative border-l border-border-muted pl-8 space-y-12"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={viewportOnce}
+      >
+        {experiences.map((exp) => (
+          <motion.div key={exp.id} variants={staggerItemX} className="relative">
+            <div
+              className={`absolute -left-[37px] w-3 h-3 rounded-full border-2 ${
+                exp.accent ? 'bg-accent border-accent' : 'bg-canvas border-border-dim'
+              }`}
+            />
             <div className="mb-2">
               <h3 className="text-lg font-semibold">
                 {exp.company}
@@ -52,7 +54,7 @@ export default function Experience() {
             ) : null}
           </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   )
 }

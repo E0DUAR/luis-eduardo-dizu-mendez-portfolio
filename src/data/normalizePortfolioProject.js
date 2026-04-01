@@ -4,5 +4,6 @@ export function normalizePortfolioProject(project) {
   return {
     ...project,
     highlight: Boolean(project.highlight ?? project.featured ?? false),
+    status: project.status ?? 'online',
   }
 }

@@ -9,6 +9,8 @@
 @layer base {
   html {
     color-scheme: dark;
+    /* Firefox: thumb / track alineados con tokens (--color-* vía ThemeProvider) */
+    scrollbar-color: var(--color-accent, #ea580b) var(--color-canvas, #0a0a0a);
   }
 
   * {
@@ -30,6 +32,57 @@
   }
   ::-webkit-scrollbar-thumb {
     border-radius: 0.125rem;
-    background-color: var(--color-accent, #f59e0b);
+    background-color: var(--color-accent, #ea580b);
+  }
+
+  /**
+   * Foco teclado: anillo con acento del theme (ThemeProvider → --color-accent).
+   */
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--color-accent, #ea580b);
+    outline-offset: 3px;
+  }
+
+  a:focus:not(:focus-visible),
+  button:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  .project-disclosure summary::-webkit-details-marker {
+    display: none;
+  }
+}
+
+@layer components {
+  @keyframes project-disclosure-chevron-pulse {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.12);
+    }
+  }
+
+  .project-disclosure-chevron-inner {
+    animation: project-disclosure-chevron-pulse 2.6s ease-in-out infinite;
+    transform-origin: center;
+  }
+
+  .project-disclosure[open] .project-disclosure-chevron-inner {
+    animation: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .project-disclosure-chevron-inner {
+      animation: none;
+    }
   }
 }
