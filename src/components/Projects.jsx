@@ -54,6 +54,9 @@ function ProjectCardBody({ project }) {
               <ExternalLink size={18} />
             </TapIconLink>
           ) : null}
+          {!project.repo && !project.url && project.repoNote ? (
+            <span className="text-xs text-fg-quiet italic">{project.repoNote}</span>
+          ) : null}
         </div>
       </div>
       <p className="text-fg-muted text-sm leading-relaxed mb-4">{project.description}</p>
