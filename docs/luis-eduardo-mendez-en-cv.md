@@ -1,6 +1,6 @@
 # Luis Eduardo Dizu Mendez
 
-**Frontend Developer · React + AI-Assisted · Bilingual (EN/ES)**
+**Software Developer · React + Node.js + AI-Assisted · Bilingual (EN/ES)**
 
 ## Estructura del PDF original
 
@@ -26,9 +26,9 @@ En el archivo fuente, aparecían además estas etiquetas de sección (tipo índi
 
 ## Summary
 
-Frontend developer with 3+ years building and shipping real-world web products using React, WordPress (headless CMS), and modern AI-assisted development tools. I've taken e-commerce sites from zero to production, published an open-source MCP connector used by other developers, and built hybrid React + WordPress architectures currently serving real users.
+Software developer building and shipping production software using React, Node.js, and AI-assisted development. I've delivered a conversational AI sales agent handling real WhatsApp leads, a full-stack quotation app with auth and PDF export, multiple e-commerce platforms, and an open-source MCP connector with organic npm downloads.
 
-I combine solid front-end fundamentals with practical business context, having led IT departments, integrated CRMs, and worked directly with US-based clients in English. I build fast, solve real problems, and learn continuously.
+I work across the full lifecycle — from client discovery and architecture to deployment. Background in IT leadership, CRM integrations, and direct collaboration with US-based teams in English.
 
 ## Projects
 
@@ -145,6 +145,22 @@ Bilingual support for e-commerce and lease-to-own retail clients. Managed ~60 da
 
 *Nota de extracción: en el PDF, “Native” y la línea de nivel B2 aparecían con espaciado irregular entre letras; el significado conservado arriba es el mismo.*
 
+## Education
+
+### Institución Universitaria Antonio José Camacho — 2021–2024
+
+Technology in Information Systems *(completion pending — 1 subject remaining)*
+
+Web Page, Digital/Multimedia and Information Resources Design
+
+### Servicio Nacional de Aprendizaje (SENA) — 2019–2020
+
+Systems Technician, Information Technology
+
+### Fundación Carlos Slim — Sep 2019 – Nov 2019
+
+Data Networks Technician, LAN/WAN Management
+
 ## Certifications
 
 ### React Development — Jan 2025
@@ -167,4 +183,4 @@ SCRUM
 
 ---
 
-*Fuente: conversión desde `luis-eduardo-mendez-en-cv.pdf` (1 página). Contenido textual extraído con pypdf; la maquetación visual del PDF no se reproduce en Markdown.*
+*Referencia local del CV. Fuente real editable en Reactive Resume.*
