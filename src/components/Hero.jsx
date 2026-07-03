@@ -35,12 +35,13 @@ export default function Hero() {
           <span className="text-fg-ghost">Dizu Mendez</span>
         </h1>
         <p className="text-xl md:text-2xl text-fg-muted max-w-2xl leading-relaxed mb-8">
-          I build and ship real products with{' '}
-          <span className="text-fg font-semibold">React</span>,{' '}
-          <span className="text-fg font-semibold">Node.js</span>, and{' '}
-          <span className="text-fg font-semibold">AI-assisted development</span>.
-          From AI sales agents to full-stack business apps — for paying clients, in production.
-          Bilingual EN/ES · Based in Colombia.
+          I build, launch, and optimize high-performance{' '}
+          <span className="text-fg font-semibold">websites</span> and{' '}
+          <span className="text-fg font-semibold">e-commerce</span> — using{' '}
+          <span className="text-fg font-semibold">AI as an engineering multiplier</span>.
+          From headless storefronts to{' '}
+          <span className="text-fg font-semibold">SEO / GEO / AEO</span> that ranks in Google and AI search.
+          For paying clients, in production. Bilingual EN/ES · Based in Colombia.
         </p>
 
         <div className="flex flex-wrap gap-4 mb-16">

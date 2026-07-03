@@ -19,8 +19,8 @@ export default function Contact() {
         <p className="text-accent text-sm font-medium tracking-widest uppercase mb-4">Contact</p>
         <h2 className="text-4xl md:text-5xl font-bold mb-6">Let's work together</h2>
         <p className="text-fg-quiet text-lg max-w-xl mx-auto mb-12">
-          I'm currently looking for a remote frontend developer role.
-          If you have something in mind, let's talk.
+          I'm currently open to a remote e-commerce and website specialist role —
+          building, optimizing, and growing digital storefronts. If that's what you need, let's talk.
         </p>
         <div className="mb-16 flex flex-wrap justify-center items-center gap-4">
           <MagneticAnchor className="inline-block">
